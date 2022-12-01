@@ -1,4 +1,4 @@
-package com.jsonar.rrule;
+package com.kyl.rrule;
 
 enum RRuleName {
     RRULE("RRULE"), FREQ("FREQ"), SECOND("BYSECOND"), MINUTE("BYMINUTE"), HOUR("BYHOUR"), MONTHDAY("BYMONTHDAY"), MONTH("BYMONTH"),

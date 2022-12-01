@@ -1,4 +1,4 @@
-package com.jsonar.rrule;
+package com.kyl.rrule;
 
 import java.util.HashMap;
 import java.util.List;
@@ -7,9 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import test.tags.UnitTest;
 
-@UnitTest
 public class RecurrenceRuleStringBuilderTest {
     private RecurrenceRuleStringBuilder builder;
 

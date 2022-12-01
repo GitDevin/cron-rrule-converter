@@ -1,4 +1,4 @@
-package com.jsonar.rrule;
+package com.kyl.rrule;
 
 import java.time.LocalDateTime;
 

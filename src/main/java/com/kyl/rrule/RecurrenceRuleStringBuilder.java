@@ -1,10 +1,10 @@
-package com.jsonar.rrule;
+package com.kyl.rrule;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.lang.StringUtils;
+import com.cronutils.utils.StringUtils;
 
 public class RecurrenceRuleStringBuilder implements RRuleStringBuilder {
     protected static final char RULE_PART_SEPARATOR = ';';
@@ -38,7 +38,7 @@ public class RecurrenceRuleStringBuilder implements RRuleStringBuilder {
 
     @Override
     public String build() {
-        if (StringUtils.isNotBlank(this.dtStartStr)) {
+        if (!StringUtils.isEmpty(this.dtStartStr)) {
             this.appendDTStart(this.dtStartStr);
         }
         this.stringBuilder.append(RRuleName.RRULE.getName());

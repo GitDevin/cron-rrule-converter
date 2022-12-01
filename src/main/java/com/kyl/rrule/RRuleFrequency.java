@@ -1,4 +1,4 @@
-package com.jsonar.rrule;
+package com.kyl.rrule;
 
 enum RRuleFrequency {
     // YEARLY(6, "YEARLY") is not supported by rrule js

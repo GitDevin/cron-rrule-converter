@@ -1,4 +1,4 @@
-package com.jsonar.rrule;
+package com.kyl.rrule;
 
 import com.cronutils.model.Cron;
 import com.cronutils.model.field.CronField;
@@ -6,6 +6,7 @@ import com.cronutils.model.field.CronFieldName;
 import com.cronutils.model.field.expression.Every;
 import com.cronutils.model.field.expression.FieldExpression;
 import com.cronutils.model.field.expression.On;
+import org.apache.commons.collections4.CollectionUtils;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -14,10 +15,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.function.Predicate;
 import java.util.stream.Stream;
-
-import org.apache.commons.collections.CollectionUtils;
-import org.apache.commons.collections.Predicate;
 
 public class QuartzCronRRuleConverter implements RRuleConverter {
     private static final Map<CronFieldName, Integer> CRON_FIELD_NAME_ORDER = new HashMap<>() {{
@@ -47,7 +46,7 @@ public class QuartzCronRRuleConverter implements RRuleConverter {
      * @return true
      */
     protected boolean isFrequency(FieldExpression fieldExpression) {
-        Predicate isEveryOne = (fe) -> {
+        Predicate<FieldExpression> isEveryOne = (fe) -> {
             if (fe instanceof Every) {
                 Every e = (Every) fe;
                 return e.getPeriod().getValue() == 1;
@@ -56,7 +55,7 @@ public class QuartzCronRRuleConverter implements RRuleConverter {
         };
 
         return (!(fieldExpression instanceof On) && fieldExpression != FieldExpression.questionMark())
-                || isEveryOne.evaluate(fieldExpression);
+                || isEveryOne.test(fieldExpression);
     }
 
     /**

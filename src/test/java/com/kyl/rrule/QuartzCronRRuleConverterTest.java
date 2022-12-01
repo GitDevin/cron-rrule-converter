@@ -1,4 +1,4 @@
-package com.jsonar.rrule;
+package com.kyl.rrule;
 
 import com.cronutils.model.Cron;
 import com.cronutils.model.definition.CronDefinitionBuilder;
@@ -13,7 +13,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-import test.tags.UnitTest;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
@@ -22,7 +21,6 @@ import java.util.Set;
 
 import static com.cronutils.model.CronType.QUARTZ;
 
-@UnitTest
 public class QuartzCronRRuleConverterTest {
     private static CronParser CRON_PARSER;
 

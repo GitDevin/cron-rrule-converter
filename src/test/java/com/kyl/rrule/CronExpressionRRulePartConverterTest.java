@@ -1,4 +1,4 @@
-package com.jsonar.rrule;
+package com.kyl.rrule;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -21,9 +21,7 @@ import com.cronutils.model.field.value.SpecialChar;
 import com.cronutils.model.field.value.SpecialCharFieldValue;
 
 import static org.junit.jupiter.api.Assertions.*;
-import test.tags.UnitTest;
 
-@UnitTest
 public class CronExpressionRRulePartConverterTest {
     private static final int START_RANGE = 1;
     private static final int END_RANGE = 5;
